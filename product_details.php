@@ -7,7 +7,6 @@ $productObj = new Product();
 $cartObj = new Cart();
 $product = $productObj->getProductById($productId);
 
-// Redirect to home if product not found
 if (!$product) {
     header('Location: index.php');
     exit;
@@ -20,12 +19,10 @@ $cartCount = $cartObj->getCount();
 
 <div class="container my-5">
     <div class="row">
-        <!-- Sidebar -->
         <div class="col-lg-3 mb-4">
             <?php include 'includes/sidebar.php'; ?>
         </div>
 
-        <!-- Main Content -->
         <div class="col-lg-9">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -43,7 +40,6 @@ $cartCount = $cartObj->getCount();
             </nav>
 
             <div class="row g-5 mt-3">
-                <!-- Product Image -->
                 <div class="col-md-6">
                     <div class="card border-0 shadow-sm p-3">
                         <img src="<?php echo $product['image']; ?>" class="img-fluid rounded"
@@ -56,7 +52,6 @@ $cartCount = $cartObj->getCount();
                     </div>
                 </div>
 
-                <!-- Product Details -->
                 <div class="col-md-6">
                     <h1 class="fw-bold mb-3">
                         <?php echo $product['name']; ?>
@@ -115,16 +110,13 @@ $cartCount = $cartObj->getCount();
                 </div>
             </div>
 
-            <!-- Related Products Section -->
             <div class="mt-5">
                 <h3 class="fw-bold mb-4">Produits Similaires</h3>
                 <?php
                 $relatedProducts = $productObj->getProductsByCategory($product['category_name']);
-                // Remove current product from related list
                 $relatedProducts = array_filter($relatedProducts, function ($p) use ($productId) {
                     return $p['id'] != $productId;
                 });
-                // Limit to 4 products
                 $relatedProducts = array_slice($relatedProducts, 0, 4);
                 ?>
 

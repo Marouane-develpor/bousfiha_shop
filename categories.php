@@ -4,25 +4,21 @@ $productObj = new Product();
 $categoryName = isset($_GET['name']) ? $_GET['name'] : null;
 
 if ($categoryName) {
-    // Show products for specific category
     $products = $productObj->getProductsByCategory($categoryName);
     $pageTitle = $categoryName;
 } else {
-    // Show all categories
     $categories = $productObj->getCategories();
     $pageTitle = "Toutes les Catégories";
 
-    // Icon mapping
     $categoryIcons = [
         'TV' => 'fas fa-tv',
         'Audio' => 'fa-solid fa-radio',
-        'Gros Electroménager' => 'fas fa-snowflake', // or fa-plug
+        'Gros Electroménager' => 'fas fa-snowflake',
         'Encastrable' => 'fas fa-burn',
         'Petit Electroménager' => 'fas fa-blender',
         'Smartphone' => 'fas fa-mobile-alt',
         'Informatique' => 'bi bi-usb-symbol',
         'Gaming' => 'fas fa-gamepad',
-        // Default
         'default' => 'fas fa-folder-open'
     ];
 }
@@ -32,12 +28,11 @@ if ($categoryName) {
 
 <div class="container my-5">
     <div class="row">
-        <!-- Sidebar -->
         <div class="col-lg-3 mb-4">
             <?php include 'includes/sidebar.php'; ?>
         </div>
 
-        <!-- Main Content -->
+
         <div class="col-lg-9">
             <?php if ($categoryName): ?>
                 <h2 class="mb-4 text-center fw-bold">
@@ -93,7 +88,7 @@ if ($categoryName) {
             <?php else: ?>
                 <h2 class="mb-5 text-center fw-bold">Nos Catégories</h2>
                 <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <?php foreach ($categories as $cat): // Changed $availableCategories to $categories as it's defined ?>
+                    <?php foreach ($categories as $cat): ?>
                         <div class="col">
                             <a href="categories.php?name=<?php echo urlencode($cat); ?>" class="text-decoration-none">
                                 <div class="card h-100 shadow-sm border-0 category-card-hover text-center py-5">

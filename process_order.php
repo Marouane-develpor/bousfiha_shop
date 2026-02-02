@@ -1,11 +1,9 @@
 <?php
 require_once 'classes/Cart.php';
 
-// Mock processing
-// In a real app, we would save the order to a database here
 
 $cartObj = new Cart();
-$cartObj->clearCart(); // Clear the cart after successful order
+$cartObj->clearCart();
 
 ?>
 <?php include 'includes/header.php'; ?>

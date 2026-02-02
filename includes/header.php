@@ -1,9 +1,8 @@
 <?php
-// Ensure Product class is available
 if (!class_exists('Product')) {
     require_once dirname(__DIR__) . '/classes/Product.php';
 }
-// Ensure Cart class is available
+
 if (!class_exists('Cart')) {
     require_once dirname(__DIR__) . '/classes/Cart.php';
 }
@@ -24,20 +23,16 @@ $cartCount = $cartObj->getCount();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bousfiha Electro | Electroménager Maroc</title>
-    <!-- Bootstrap CSS -->
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
 
-    <!-- Top Bar -->
     <div class="top-bar">
         <div class="container d-flex justify-content-between align-items-center">
             <div>
@@ -52,11 +47,9 @@ $cartCount = $cartObj->getCount();
         </div>
     </div>
 
-    <!-- Main Header -->
     <header class="main-header">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Logo -->
                 <div class="col-md-3">
                     <a href="index.php" class="text-decoration-none">
                         <h2 class="fw-bold text-dark m-0 d-flex align-items-center">
@@ -65,7 +58,6 @@ $cartCount = $cartObj->getCount();
                     </a>
                 </div>
 
-                <!-- Search Bar -->
                 <div class="col-md-6">
                     <div class="input-group search-bar-container mx-auto">
                         <input type="text" class="form-control search-input" placeholder="Rechercher un produit...">
@@ -73,7 +65,6 @@ $cartCount = $cartObj->getCount();
                     </div>
                 </div>
 
-                <!-- User Actions -->
                 <div class="col-md-3 text-end">
                     <a href="login.php" class="text-dark me-3 text-decoration-none">
                         <i class="fas fa-user fa-lg mb-1 d-block"></i>
@@ -91,7 +82,6 @@ $cartCount = $cartObj->getCount();
         </div>
     </header>
 
-    <!-- Navigation -->
     <nav class="navbar navbar-expand-lg main-nav">
         <div class="container">
             <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -100,7 +90,6 @@ $cartCount = $cartObj->getCount();
             <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav w-100 justify-content-between">
                     <li class="nav-item">
-                        <!-- Trigger Modal -->
                         <a class="nav-link" href="categories.php"><i class="fas fa-bars me-2"></i> TOUTES LES
                             CATÉGORIES</a>
                     </li>

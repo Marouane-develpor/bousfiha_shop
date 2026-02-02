@@ -7,7 +7,7 @@ $promoProducts = $productObj->getPromotionalProducts();
 
 <?php include 'includes/header.php'; ?>
 
-<!-- Hero Slider -->
+
 <div id="heroCarousel" class="carousel slide hero-slider mb-5" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
@@ -41,7 +41,7 @@ $promoProducts = $productObj->getPromotionalProducts();
     </button>
 </div>
 
-<!-- Special Offers Section -->
+
 <div class="container mb-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold"><span class="text-primary-custom">OFFRES</span> DE LA SEMAINE</h2>
@@ -87,15 +87,15 @@ $promoProducts = $productObj->getPromotionalProducts();
     </div>
 </div>
 
-<!-- All Products Section -->
+
 <div class="container mb-5">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="fw-bold">NOS MEILLEURES <span class="text-primary-custom">VENTES</span></h2>
     </div>
     <div class="row row-cols-1 row-cols-md-4 g-4">
         <?php foreach ($allProducts as $product): ?>
-            <!-- Skip already shown promos if desirable, simplified here to show all -->
-            <div class="col">
+
+        <div class="col">
                 <div class="card product-card">
                     <?php if (isset($product['badge']) && $product['badge']): ?>
                         <span class="product-badge"><?php echo $product['badge']; ?></span>

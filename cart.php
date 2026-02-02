@@ -11,7 +11,8 @@ $total = 0;
 
 <?php include 'includes/header.php'; ?>
 
-<!-- Page Header -->
+<?php include 'includes/header.php'; ?>
+
 <div class="bg-light py-4 mb-4 border-bottom">
     <div class="container">
         <h1 class="fw-bold text-uppercase mb-0"><i class="fas fa-shopping-cart text-primary-custom me-2"></i> Mon Panier
@@ -29,7 +30,7 @@ $total = 0;
         </div>
     <?php else: ?>
         <div class="row">
-            <!-- Cart Items -->
+
             <div class="col-lg-8">
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body p-0">
@@ -101,38 +102,39 @@ $total = 0;
                 </div>
             </div>
 
-            <!-- Summary -->
-            <div class="col-lg-4">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-header bg-white border-bottom py-3">
-                        <h5 class="fw-bold mb-0">Résumé de la commande</h5>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white border-bottom py-3">
+                    <h5 class="fw-bold mb-0">Résumé de la commande</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="text-muted">Sous-total</span>
+                        <span class="fw-bold">
+                            <?php echo number_format($total, 0, ',', ' '); ?> DH
+                        </span>
                     </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="text-muted">Sous-total</span>
-                            <span class="fw-bold">
-                                <?php echo number_format($total, 0, ',', ' '); ?> DH
-                            </span>
-                        </div>
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="text-muted">Livraison</span>
-                            <span class="text-success">Gratuite</span>
-                        </div>
-                        <hr>
-                        <div class="d-flex justify-content-between mb-4">
-                            <span class="fs-5 fw-bold">Total</span>
-                            <span class="fs-4 fw-bold text-primary-custom">
-                                <?php echo number_format($total, 0, ',', ' '); ?> DH
-                            </span>
-                        </div>
-                        <a href="checkout.php"
-                            class="btn btn-primary-custom w-100 py-2 rounded-pill fw-bold text-uppercase shadow-sm">Valider
-                            la commande</a>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="text-muted">Livraison</span>
+                        <span class="text-success">Gratuite</span>
                     </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="fs-5 fw-bold">Total</span>
+                        <span class="fs-4 fw-bold text-primary-custom">
+                            <?php echo number_format($total, 0, ',', ' '); ?> DH
+                        </span>
+                    </div>
+                    <a href="checkout.php"
+                        class="btn btn-primary-custom w-100 py-2 rounded-pill fw-bold text-uppercase shadow-sm">Valider
+                        la commande</a>
                 </div>
             </div>
         </div>
-    <?php endif; ?>
+    </div>
+<?php endif; ?>
 </div>
 
 <?php include 'includes/footer.php'; ?>

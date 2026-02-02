@@ -8,12 +8,10 @@ $promoProducts = $productObj->getPromotionalProducts();
 
 <div class="container mb-5">
     <div class="row">
-        <!-- Sidebar -->
         <div class="col-lg-3 mb-4">
             <?php include 'includes/sidebar.php'; ?>
         </div>
 
-        <!-- Main Content -->
         <div class="col-lg-9">
             <h2 class="mb-4 fw-bold text-danger">NOS PROMOTIONS</h2>
 
@@ -26,7 +24,6 @@ $promoProducts = $productObj->getPromotionalProducts();
                     <?php foreach ($promoProducts as $product): ?>
                         <div class="col">
                             <div class="card product-card h-100">
-                                <!-- Calculate Discount Percentage -->
                                 <?php
                                 $saving = $product['old_price'] - $product['price'];
                                 $percent = round(($saving / $product['old_price']) * 100);

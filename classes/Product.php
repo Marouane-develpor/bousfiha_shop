@@ -22,7 +22,6 @@ class Product
 
     public function getPromotionalProducts(): array
     {
-        // Assuming promotional products have an old_price set or a 'Promo' badge
         $query = "SELECT * FROM " . $this->table_name . " WHERE old_price IS NOT NULL AND old_price > price";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
@@ -31,11 +30,6 @@ class Product
 
     public function getProductsByCategory($category): array
     {
-        // We can search by category name if the table has it, or join with categories table
-        // Based on current schema, products table likely has 'category_name' or similar if denormalized, 
-        // or we need to join. The previous mock data had 'category' string.
-        // Let's assume the table has 'category_name' as per the schema we saw earlier.
-
         $query = "SELECT * FROM " . $this->table_name . " WHERE category_name = :category";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(":category", $category);
